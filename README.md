@@ -1,6 +1,5 @@
 # Clustering
 
-# Clustering
 # Clustering Algorithms Comparative Study
 
 ## Introduction
