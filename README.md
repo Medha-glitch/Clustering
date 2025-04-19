@@ -129,10 +129,33 @@ Used the Iris dataset from UCI repository with 150 samples and 4 features.
 
 
 ### Key Findings
-1. **Best Algorithm**: [Your observation]
-2. **Best Preprocessing**: [Your observation]
-3. **Optimal Cluster Number**: [Your observation]
 
+### Best Algorithm: 
+**Mean Shift** demonstrated superior performance with:
+- Highest Silhouette score (0.819 with Normalization)
+- Lowest Davies-Bouldin score (0.241 with Normalization)
+- Best Calinski-Harabasz score (1634 with Normalization)
+
+*Note:* While Mean Shift performed best, it automatically determines cluster numbers, which may limit control.
+
+### Best Preprocessing: 
+**Normalization** worked exceptionally well for Mean Shift, while **T+N+PCA** (Transformation + Normalization + PCA) was optimal for K-Means and Hierarchical clustering, offering:
+- Balanced performance across all metrics
+- Improved dimensionality reduction
+- More consistent results than individual techniques
+
+### Optimal Cluster Number: 
+**3 clusters** consistently outperformed other configurations:
+- All algorithms showed peak performance with 3 clusters
+- Scores degraded significantly for 4-5 clusters
+- Matches the known ground truth of the Iris dataset (3 species)
+
+### Practical Recommendation:
+- Use **Mean Shift with Normalization** for automatic clustering
+- Choose **K-Means (c=3) with T+N+PCA** when cluster count control is needed
+- Avoid standalone Transform/Standardization which underperformed
+
+  
 ## Visualizations
 ## Results
 
